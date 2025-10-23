@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const articlesBlogSlice = createSlice({
     name: 'articles',
     initialState: {
-        articles: [],
+        articles: ['elemento 1'],
         articlesByCategory: [],
         selectedCategory: null,
         category: [],
