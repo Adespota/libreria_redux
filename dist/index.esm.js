@@ -7,6 +7,7 @@ import { set } from 'lodash';
 // Il file esporta le azioni, i selettori per accedere a parti specifiche dello stato e il reducer associato allo slice "articolo"
 
 
+
 const initialArticoloState = {
     categoria: "ciao",
     indice: [],
