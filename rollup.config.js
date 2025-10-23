@@ -7,6 +7,6 @@ export default {
         { file: 'dist/index.esm.js', format: 'esm', sourcemap: true },
         { file: 'dist/index.cjs', format: 'cjs', sourcemap: true }
     ],
-    external: [/^react/, /^react-redux/, /^@reduxjs\/toolkit/],
+    external: [/^react/, /^react-redux/, /^@reduxjs\/toolkit/, /^lodash(\/.*)?$/],
     plugins: [resolve({ extensions: ['.js'] }), commonjs()]
 };
