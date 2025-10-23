@@ -8,7 +8,7 @@ import { set } from 'lodash';
 
 
 const initialArticoloState = {
-    categoria: "",
+    categoria: "ciao",
     indice: [],
     documentId: null,
     titolo: "",
