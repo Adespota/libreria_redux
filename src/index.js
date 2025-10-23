@@ -7,3 +7,23 @@ export { default as snackbarReducer }     from './store/snackbarSlice.js';
 export * as articolo     from './store/articoloSlice.js';
 export * as articlesBlog from './store/articlesBlogSlice.js';
 export * as snackbar     from './store/snackbarSlice.js';
+
+
+import {
+    setArticles,
+    setSelectedCategory,
+    setArticlesByCategory,
+    setCategoryPageBlog,
+    resetSelectedCategory,
+    setLoading
+} from './store/articlesBlogSlice.js';
+
+// 🔥 RIESPORTA tutte le azioni. Questo le rende accessibili al consumer tramite il nome del pacchetto.
+export {
+    setArticles,
+    setSelectedCategory,
+    setArticlesByCategory,
+    setCategoryPageBlog,
+    resetSelectedCategory,
+    setLoading
+};

@@ -727,5 +727,5 @@ var snackbarSlice$2 = /*#__PURE__*/Object.freeze({
     snackbarSlice: snackbarSlice
 });
 
-export { articlesBlogSlice$2 as articlesBlog, articlesBlogSlice$1 as articlesBlogReducer, articoloSlice$2 as articolo, articoloSlice$1 as articoloReducer, snackbarSlice$2 as snackbar, snackbarSlice$1 as snackbarReducer };
+export { articlesBlogSlice$2 as articlesBlog, articlesBlogSlice$1 as articlesBlogReducer, articoloSlice$2 as articolo, articoloSlice$1 as articoloReducer, resetSelectedCategory, setArticles, setArticlesByCategory, setCategoryPageBlog, setLoading, setSelectedCategory, snackbarSlice$2 as snackbar, snackbarSlice$1 as snackbarReducer };
 //# sourceMappingURL=index.esm.js.map
