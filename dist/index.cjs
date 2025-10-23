@@ -620,8 +620,8 @@ var articoloSlice$2 = /*#__PURE__*/Object.freeze({
 const articlesBlogSlice = toolkit.createSlice({
     name: 'articles',
     initialState: {
-        articles: ['elemento 1'],
-        articlesByCategory: [],
+        articles: [],
+        articlesByCategory: ['elemento 1'],
         selectedCategory: null,
         category: [],
         loading: false,
