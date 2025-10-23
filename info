@@ -1,5 +1,5 @@
 
-Codice per pushare e aggiornare la versionbe della libreria_redux
+Codice per pushare e aggiornare la versione della libreria_redux
 
 npm run build
 git add -f dist package.json src rollup.config.js
