@@ -1,24 +1,23 @@
 {
   "name": "@tuoorg/domain-lib",
   "version": "0.1.0",
-  "description": "",
-  "main": "dist/index.cjs",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "module",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.8",
-    "@rollup/plugin-node-resolve": "^16.0.3",
-    "rollup": "^4.52.5"
-  },
+  "main": "dist/index.cjs",
   "module": "dist/index.esm.js",
+  "files": ["dist"],
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "rollup -c"
+  },
   "peerDependencies": {
     "@reduxjs/toolkit": "^2",
     "react": ">=18",
-    "react-redux": ">=8"
+    "react-redux": ">=8",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "rollup": "^4.52.5",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-commonjs": "^28.0.8"
   }
 }
