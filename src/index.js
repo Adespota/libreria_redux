@@ -1,5 +1,4 @@
-// src/index.js
-import {articoloSlice} from "./store/articoloSlice.js";
+
 
 export { default as articoloReducer }     from './store/articoloSlice.js';
 export { default as articlesBlogReducer } from './store/articlesBlogSlice.js';

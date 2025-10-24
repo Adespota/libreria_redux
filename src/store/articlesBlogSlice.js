@@ -19,12 +19,12 @@ export const articlesBlogSlice = createSlice({
         setArticlesByCategory(state, action) {
             state.articlesByCategory = action.payload;
         },
-        setLoading(state, action) {
-            state.loading = action.payload;
-        },
-        setSelectedCategory(state, action) {
-            state.selectedCategory = action.payload;
-        },
+        //setLoading(state, action) {
+           //state.loading = action.payload;
+        //},
+        //setSelectedCategory(state, action) {
+            //state.selectedCategory = action.payload;
+        //},
         // Resetta la categoria selezionata
         resetSelectedCategory(state) {
             state.selectedCategory = null;
@@ -38,18 +38,18 @@ export const articlesBlogSlice = createSlice({
 
 export const {
     setArticles,
-    setSelectedCategory,
+    //setSelectedCategory,
     setArticlesByCategory,
     setCategoryPageBlog,
     resetSelectedCategory,
-    setLoading,
+    //setLoading,
 } = articlesBlogSlice.actions;
 
 export const selectArticles = (state) => state.articles.articles;
 export const selectArticlesByCategory = (state) => state.articles.articlesByCategory;
-export const selectSelectedCategory = (state) => state.articles.selectedCategory;
+//export const selectSelectedCategory = (state) => state.articles.selectedCategory;
 export const selectCategoryPageBlog = (state) => state.articles.category;
-export const selectLoading = (state) => state.articles.loading;
+//export const selectLoading = (state) => state.articles.loading;
 
 
 export default articlesBlogSlice.reducer;

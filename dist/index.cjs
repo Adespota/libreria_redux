@@ -511,7 +511,7 @@ const {
     deleteAllParagraphs,
     setInput,
     setInputPath,
-    setSelectedCategory: setSelectedCategory$1,
+    setSelectedCategory,
     resetNewDescription,
     setDocumentId,
     resetImage,
@@ -530,7 +530,7 @@ const {
     resetImageInParagraph,
     resetFileName,
     resetAll,
-    setLoading: setLoading$1,
+    setLoading,
     setCategory,
     triggerSendToRedux,
     validaTutto,
@@ -548,9 +548,9 @@ const selectNewDescriptionOfCategory = (state) => state.articolo.newDescription;
 const selectDocumentId = (state) => state.articolo.documentId;
 const selectImagePreview = (state) => state.articolo.imagePreview;
 const selectImagePreviewParagraph = (index) => (state) => state.articolo.paragrafi[index]?.imagePreviewParagraph;
-const selectLoading$1 = (state) => state.articolo.loading;
+const selectLoading = (state) => state.articolo.loading;
 const selectCategories = (state) => state.articolo.category;
-const selectSelectedCategory$1 = (state) => state.articolo.categoria;
+const selectSelectedCategory = (state) => state.articolo.categoria;
 const selectFaq = (state) => state.articolo.faq;
 // Esporto tutte le validazioni
 const selectValidazione = (state) => state.articolo.validazione;
@@ -578,10 +578,10 @@ var articoloSlice$2 = /*#__PURE__*/Object.freeze({
     selectImagePreview: selectImagePreview,
     selectImagePreviewParagraph: selectImagePreviewParagraph,
     selectInitialStateArticolo: selectInitialStateArticolo,
-    selectLoading: selectLoading$1,
+    selectLoading: selectLoading,
     selectNewCategory: selectNewCategory,
     selectNewDescriptionOfCategory: selectNewDescriptionOfCategory,
-    selectSelectedCategory: selectSelectedCategory$1,
+    selectSelectedCategory: selectSelectedCategory,
     selectValidazione: selectValidazione,
     setArticleDate: setArticleDate,
     setCategory: setCategory,
@@ -594,9 +594,9 @@ var articoloSlice$2 = /*#__PURE__*/Object.freeze({
     setImagePreviewParagraph: setImagePreviewParagraph,
     setInput: setInput,
     setInputPath: setInputPath,
-    setLoading: setLoading$1,
+    setLoading: setLoading,
     setPunteggioSEO: setPunteggioSEO,
-    setSelectedCategory: setSelectedCategory$1,
+    setSelectedCategory: setSelectedCategory,
     setSelectedNewCategory: setSelectedNewCategory,
     triggerSendToRedux: triggerSendToRedux,
     updateContentParagraph: updateContentParagraph,
@@ -636,12 +636,12 @@ const articlesBlogSlice = toolkit.createSlice({
         setArticlesByCategory(state, action) {
             state.articlesByCategory = action.payload;
         },
-        setLoading(state, action) {
-            state.loading = action.payload;
-        },
-        setSelectedCategory(state, action) {
-            state.selectedCategory = action.payload;
-        },
+        //setLoading(state, action) {
+           //state.loading = action.payload;
+        //},
+        //setSelectedCategory(state, action) {
+            //state.selectedCategory = action.payload;
+        //},
         // Resetta la categoria selezionata
         resetSelectedCategory(state) {
             state.selectedCategory = null;
@@ -655,18 +655,18 @@ const articlesBlogSlice = toolkit.createSlice({
 
 const {
     setArticles,
-    setSelectedCategory,
+    //setSelectedCategory,
     setArticlesByCategory,
     setCategoryPageBlog,
     resetSelectedCategory,
-    setLoading,
+    //setLoading,
 } = articlesBlogSlice.actions;
 
 const selectArticles = (state) => state.articles.articles;
 const selectArticlesByCategory = (state) => state.articles.articlesByCategory;
-const selectSelectedCategory = (state) => state.articles.selectedCategory;
+//export const selectSelectedCategory = (state) => state.articles.selectedCategory;
 const selectCategoryPageBlog = (state) => state.articles.category;
-const selectLoading = (state) => state.articles.loading;
+//export const selectLoading = (state) => state.articles.loading;
 
 
 var articlesBlogSlice$1 = articlesBlogSlice.reducer;
@@ -679,13 +679,9 @@ var articlesBlogSlice$2 = /*#__PURE__*/Object.freeze({
     selectArticles: selectArticles,
     selectArticlesByCategory: selectArticlesByCategory,
     selectCategoryPageBlog: selectCategoryPageBlog,
-    selectLoading: selectLoading,
-    selectSelectedCategory: selectSelectedCategory,
     setArticles: setArticles,
     setArticlesByCategory: setArticlesByCategory,
-    setCategoryPageBlog: setCategoryPageBlog,
-    setLoading: setLoading,
-    setSelectedCategory: setSelectedCategory
+    setCategoryPageBlog: setCategoryPageBlog
 });
 
 const initialSnackbarState = {
@@ -760,9 +756,9 @@ exports.setImagePreview = setImagePreview;
 exports.setImagePreviewParagraph = setImagePreviewParagraph;
 exports.setInput = setInput;
 exports.setInputPath = setInputPath;
-exports.setLoading = setLoading$1;
+exports.setLoading = setLoading;
 exports.setPunteggioSEO = setPunteggioSEO;
-exports.setSelectedCategory = setSelectedCategory$1;
+exports.setSelectedCategory = setSelectedCategory;
 exports.setSelectedNewCategory = setSelectedNewCategory;
 exports.snackbar = snackbarSlice$2;
 exports.snackbarReducer = snackbarSlice$1;
