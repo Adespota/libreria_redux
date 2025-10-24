@@ -500,6 +500,7 @@ export const articoloSlice = createSlice({
         },
     },
 });
+
 // Estrai le azioni create
 export const {
     updateIndiceFromGemini,

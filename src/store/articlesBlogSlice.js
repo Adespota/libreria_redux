@@ -8,7 +8,7 @@ export const articlesBlogSlice = createSlice({
         articles: [],
         articlesByCategory: ['elemento 1'],
         selectedCategory: null,
-        category: [],
+        category: [], // Ci sono tutte le categorie
         loading: false,
     },
     reducers: {
