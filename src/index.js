@@ -14,20 +14,20 @@ export * as snackbar     from './store/snackbarSlice.js';
 // Esporto tutte le azioni di articlesBlogSlice
 import {
     setArticles,
-    setSelectedCategory,
+    //setSelectedCategory,
     setArticlesByCategory,
     setCategoryPageBlog,
     resetSelectedCategory,
-    setLoading
+    //setLoading
 } from './store/articlesBlogSlice.js';
 
 export {
     setArticles,
-    setSelectedCategory,
+    //setSelectedCategory,
     setArticlesByCategory,
     setCategoryPageBlog,
     resetSelectedCategory,
-    setLoading
+    //setLoading
 };
 
 

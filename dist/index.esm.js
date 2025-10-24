@@ -490,6 +490,7 @@ const articoloSlice = createSlice({
         },
     },
 });
+
 // Estrai le azioni create
 const {
     updateIndiceFromGemini,
@@ -622,7 +623,7 @@ const articlesBlogSlice = createSlice({
         articles: [],
         articlesByCategory: ['elemento 1'],
         selectedCategory: null,
-        category: [],
+        category: [], // Ci sono tutte le categorie
         loading: false,
     },
     reducers: {
@@ -727,5 +728,5 @@ var snackbarSlice$2 = /*#__PURE__*/Object.freeze({
     snackbarSlice: snackbarSlice
 });
 
-export { articlesBlogSlice$2 as articlesBlog, articlesBlogSlice$1 as articlesBlogReducer, articoloSlice$2 as articolo, articoloSlice$1 as articoloReducer, resetSelectedCategory, setArticles, setArticlesByCategory, setCategoryPageBlog, setLoading, setSelectedCategory, snackbarSlice$2 as snackbar, snackbarSlice$1 as snackbarReducer };
+export { addParagraph, articlesBlogSlice$2 as articlesBlog, articlesBlogSlice$1 as articlesBlogReducer, articoloSlice$2 as articolo, articoloSlice$1 as articoloReducer, deleteAllParagraphs, deleteParagraph, resetAll, resetFileName, resetImage, resetImageInParagraph, resetImagePreview, resetImagePreviewParagraph, resetNewCategory, resetNewDescription, resetSelectedCategory, setArticleDate, setArticles, setArticlesByCategory, setCategory, setCategoryPageBlog, setContaParole, setContaParoleTotale, setDocumentId, setFileName, setFileNameImageParagraph, setImagePreview, setImagePreviewParagraph, setInput, setInputPath, setLoading$1 as setLoading, setPunteggioSEO, setSelectedCategory$1 as setSelectedCategory, setSelectedNewCategory, snackbarSlice$2 as snackbar, snackbarSlice$1 as snackbarReducer, triggerSendToRedux, updateContentParagraph, updateFaqFromGemini, updateIndice, updateIndiceFromGemini, updateLinkRiferimento, updateMetaDescriptionFromGemini, updateParolaChiaveFromGemini, updateParolePerParagrafo, updatePuntiChiaveFromGemini, updateSintesiFromGemini, updateSlugFromGemini, updateSubtitleFromGemini, updateTitleFromGemini, updateTitleParagraph, updateTitoloSeoFromGemini, validaTutto, verificaUnicitaSlug };
 //# sourceMappingURL=index.esm.js.map

@@ -492,6 +492,7 @@ const articoloSlice = toolkit.createSlice({
         },
     },
 });
+
 // Estrai le azioni create
 const {
     updateIndiceFromGemini,
@@ -624,7 +625,7 @@ const articlesBlogSlice = toolkit.createSlice({
         articles: [],
         articlesByCategory: ['elemento 1'],
         selectedCategory: null,
-        category: [],
+        category: [], // Ci sono tutte le categorie
         loading: false,
     },
     reducers: {
@@ -729,16 +730,58 @@ var snackbarSlice$2 = /*#__PURE__*/Object.freeze({
     snackbarSlice: snackbarSlice
 });
 
+exports.addParagraph = addParagraph;
 exports.articlesBlog = articlesBlogSlice$2;
 exports.articlesBlogReducer = articlesBlogSlice$1;
 exports.articolo = articoloSlice$2;
 exports.articoloReducer = articoloSlice$1;
+exports.deleteAllParagraphs = deleteAllParagraphs;
+exports.deleteParagraph = deleteParagraph;
+exports.resetAll = resetAll;
+exports.resetFileName = resetFileName;
+exports.resetImage = resetImage;
+exports.resetImageInParagraph = resetImageInParagraph;
+exports.resetImagePreview = resetImagePreview;
+exports.resetImagePreviewParagraph = resetImagePreviewParagraph;
+exports.resetNewCategory = resetNewCategory;
+exports.resetNewDescription = resetNewDescription;
 exports.resetSelectedCategory = resetSelectedCategory;
+exports.setArticleDate = setArticleDate;
 exports.setArticles = setArticles;
 exports.setArticlesByCategory = setArticlesByCategory;
+exports.setCategory = setCategory;
 exports.setCategoryPageBlog = setCategoryPageBlog;
-exports.setLoading = setLoading;
-exports.setSelectedCategory = setSelectedCategory;
+exports.setContaParole = setContaParole;
+exports.setContaParoleTotale = setContaParoleTotale;
+exports.setDocumentId = setDocumentId;
+exports.setFileName = setFileName;
+exports.setFileNameImageParagraph = setFileNameImageParagraph;
+exports.setImagePreview = setImagePreview;
+exports.setImagePreviewParagraph = setImagePreviewParagraph;
+exports.setInput = setInput;
+exports.setInputPath = setInputPath;
+exports.setLoading = setLoading$1;
+exports.setPunteggioSEO = setPunteggioSEO;
+exports.setSelectedCategory = setSelectedCategory$1;
+exports.setSelectedNewCategory = setSelectedNewCategory;
 exports.snackbar = snackbarSlice$2;
 exports.snackbarReducer = snackbarSlice$1;
+exports.triggerSendToRedux = triggerSendToRedux;
+exports.updateContentParagraph = updateContentParagraph;
+exports.updateFaqFromGemini = updateFaqFromGemini;
+exports.updateIndice = updateIndice;
+exports.updateIndiceFromGemini = updateIndiceFromGemini;
+exports.updateLinkRiferimento = updateLinkRiferimento;
+exports.updateMetaDescriptionFromGemini = updateMetaDescriptionFromGemini;
+exports.updateParolaChiaveFromGemini = updateParolaChiaveFromGemini;
+exports.updateParolePerParagrafo = updateParolePerParagrafo;
+exports.updatePuntiChiaveFromGemini = updatePuntiChiaveFromGemini;
+exports.updateSintesiFromGemini = updateSintesiFromGemini;
+exports.updateSlugFromGemini = updateSlugFromGemini;
+exports.updateSubtitleFromGemini = updateSubtitleFromGemini;
+exports.updateTitleFromGemini = updateTitleFromGemini;
+exports.updateTitleParagraph = updateTitleParagraph;
+exports.updateTitoloSeoFromGemini = updateTitoloSeoFromGemini;
+exports.validaTutto = validaTutto;
+exports.verificaUnicitaSlug = verificaUnicitaSlug;
 //# sourceMappingURL=index.cjs.map
