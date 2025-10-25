@@ -130,3 +130,16 @@ export {
     setPunteggioSEO,
 };
 
+
+
+// Importo tutte le azioni si snackbarSlice
+import {
+    showSnackbar,
+    hideSnackbar
+} from './store/snackBarSlice.js';
+
+export {
+    showSnackbar,
+    hideSnackbar,
+}
+
