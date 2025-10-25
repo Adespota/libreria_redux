@@ -684,48 +684,6 @@ var articlesBlogSlice$2 = /*#__PURE__*/Object.freeze({
     setCategoryPageBlog: setCategoryPageBlog
 });
 
-const initialSnackbarState$1 = {
-    open: false,
-    message: "",
-    type: "success", // success, error, warning, info
-};
-
-const snackbarSlice$1 = toolkit.createSlice({
-    name: "snackbar",
-    initialState: initialSnackbarState$1,
-    reducers: {
-        showSnackbar: (state, action) => {
-            const { message, type } = action.payload;
-            state.open = true;
-            state.message = message;
-            state.type = type;
-        },
-        hideSnackbar: (state) => {
-            state.open = false;
-            state.message = "";
-            state.type = "success";
-        },
-    },
-});
-
-// Estrai le azioni e il reducer
-const {
-    showSnackbar: showSnackbar$1,
-    hideSnackbar: hideSnackbar$1
-}
-= snackbarSlice$1.actions;
-
-
-var snackbarSlice$2 = snackbarSlice$1.reducer;
-
-var snackbarSlice$3 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: snackbarSlice$2,
-    hideSnackbar: hideSnackbar$1,
-    showSnackbar: showSnackbar$1,
-    snackbarSlice: snackbarSlice$1
-});
-
 const initialSnackbarState = {
     open: false,
     message: "",
@@ -758,7 +716,15 @@ const {
 = snackbarSlice.actions;
 
 
-snackbarSlice.reducer;
+var snackbarSlice$1 = snackbarSlice.reducer;
+
+var snackbarSlice$2 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: snackbarSlice$1,
+    hideSnackbar: hideSnackbar,
+    showSnackbar: showSnackbar,
+    snackbarSlice: snackbarSlice
+});
 
 exports.addParagraph = addParagraph;
 exports.articlesBlog = articlesBlogSlice$2;
@@ -796,8 +762,8 @@ exports.setPunteggioSEO = setPunteggioSEO;
 exports.setSelectedCategory = setSelectedCategory;
 exports.setSelectedNewCategory = setSelectedNewCategory;
 exports.showSnackbar = showSnackbar;
-exports.snackbar = snackbarSlice$3;
-exports.snackbarReducer = snackbarSlice$2;
+exports.snackbar = snackbarSlice$2;
+exports.snackbarReducer = snackbarSlice$1;
 exports.triggerSendToRedux = triggerSendToRedux;
 exports.updateContentParagraph = updateContentParagraph;
 exports.updateFaqFromGemini = updateFaqFromGemini;

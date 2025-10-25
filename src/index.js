@@ -136,7 +136,7 @@ export {
 import {
     showSnackbar,
     hideSnackbar
-} from './store/snackBarSlice.js';
+} from './store/snackbarSlice.js';
 
 export {
     showSnackbar,
