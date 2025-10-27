@@ -132,7 +132,7 @@ export {
 
 
 
-// Importo tutte le azioni si snackbarSlice
+// Importo tutte le azioni di snackbarSlice
 import {
     showSnackbar,
     hideSnackbar

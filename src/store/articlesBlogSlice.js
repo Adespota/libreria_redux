@@ -6,7 +6,7 @@ export const articlesBlogSlice = createSlice({
     name: 'articles',
     initialState: {
         articles: [],
-        articlesByCategory: ['elemento 1'],
+        articlesByCategory: [],
         selectedCategory: null,
         category: [], // Ci sono tutte le categorie
         loading: false,

@@ -1,7 +1,7 @@
 'use strict';
 
 var toolkit = require('@reduxjs/toolkit');
-var lodash = require('lodash');
+require('lodash');
 
 // Questo file definisce il slice "articolo" utilizzando Redux Toolkit per gestire lo stato di un articolo di blog
 // Lo stato include diverse proprietà come la categoria selezionata, i paragrafi, il titolo, la descrizione SEO, immagini, e altro
@@ -9,9 +9,8 @@ var lodash = require('lodash');
 // Il file esporta le azioni, i selettori per accedere a parti specifiche dello stato e il reducer associato allo slice "articolo"
 
 
-
 const initialArticoloState = {
-    categoria: "ciao",
+    categoria: "",
     indice: [],
     documentId: null,
     titolo: "",
@@ -158,14 +157,43 @@ const articoloSlice = toolkit.createSlice({
         triggerSendToRedux: (state, action) => {
             state.shouldSendToRedux = action.payload;
         },
-        setInputPath: (state, action) => {
-            const { path, value } = action.payload;
+       // setInputPath: (state, action) => {
+           // const { path, value } = action.payload;
             //console.log('Path:', path);
             //console.log('Value:', value);
             //console.log('setInputPath payload', action.payload);
-            lodash.set(state, path, value);
+            //set(state, path, value);
             //console.log('Updated state', state);
+        //},
+        setInputPath: (state, action) => {
+            const { path, value } = action.payload;
+            const keys = path.replace(/\[(\d+)\]/g, '.$1').split('.');
+            let current = state;
+
+            for (let i = 0; i < keys.length - 1; i++) {
+                const key = keys[i];
+                const nextKey = keys[i + 1];
+
+                // Crea strutture intermedie se mancano
+                if (!(key in current)) {
+                    current[key] = isNaN(Number(nextKey)) ? {} : [];
+                }
+
+                current = current[key];
+            }
+
+            const lastKey = keys[keys.length - 1];
+
+            // Se siamo in un array, assicurati che la chiave sia numerica
+            if (Array.isArray(current) && isNaN(Number(lastKey))) {
+                throw new Error(
+                    `[setInputPath] Tentativo di assegnare chiave non numerica '${lastKey}' a un array`
+                );
+            }
+
+            current[lastKey] = value;
         },
+
         setSelectedCategory: (state, action) => {
             state.categoria = action.payload;
         },
@@ -623,7 +651,7 @@ const articlesBlogSlice = toolkit.createSlice({
     name: 'articles',
     initialState: {
         articles: [],
-        articlesByCategory: ['elemento 1'],
+        articlesByCategory: [],
         selectedCategory: null,
         category: [], // Ci sono tutte le categorie
         loading: false,
