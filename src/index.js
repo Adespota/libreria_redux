@@ -81,6 +81,7 @@ import {
     updateParolePerParagrafo,
     verificaUnicitaSlug,
     setPunteggioSEO,
+    addFaq,
 } from './store/articoloSlice.js';
 
 export {
@@ -128,6 +129,7 @@ export {
     updateParolePerParagrafo,
     verificaUnicitaSlug,
     setPunteggioSEO,
+    addFaq,
 };
 
 

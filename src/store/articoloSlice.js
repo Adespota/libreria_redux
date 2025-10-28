@@ -29,6 +29,7 @@ const initialArticoloState = {
     ],
     faq: [
         {
+            id: nanoid(),
             domanda: "",
             risposta: ""
         }
@@ -234,6 +235,14 @@ export const articoloSlice = createSlice({
         },
         deleteAllParagraphs: (state) => {
             state.paragrafi = [];
+        },
+        addFaq: (state) => {
+            const newFaq = {
+                id: nanoid(),
+                domanda: "",
+                risposta: "",
+            };
+            state.faq.push(newFaq);
         },
         addParagraph: (state) => {
             const newParagraph = {
@@ -546,6 +555,7 @@ export const {
     updateParolePerParagrafo,
     verificaUnicitaSlug,
     setPunteggioSEO,
+    addFaq,
 } = articoloSlice.actions;
 
 // Seleziona parti dello stato

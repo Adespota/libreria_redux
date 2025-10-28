@@ -31,6 +31,7 @@ const initialArticoloState = {
     ],
     faq: [
         {
+            id: toolkit.nanoid(),
             domanda: "",
             risposta: ""
         }
@@ -226,6 +227,14 @@ const articoloSlice = toolkit.createSlice({
         },
         deleteAllParagraphs: (state) => {
             state.paragrafi = [];
+        },
+        addFaq: (state) => {
+            const newFaq = {
+                id: toolkit.nanoid(),
+                domanda: "",
+                risposta: "",
+            };
+            state.faq.push(newFaq);
         },
         addParagraph: (state) => {
             const newParagraph = {
@@ -538,6 +547,7 @@ const {
     updateParolePerParagrafo,
     verificaUnicitaSlug,
     setPunteggioSEO,
+    addFaq,
 } = articoloSlice.actions;
 
 // Seleziona parti dello stato
@@ -557,6 +567,7 @@ var articoloSlice$1 = articoloSlice.reducer;
 
 var articoloSlice$2 = /*#__PURE__*/Object.freeze({
     __proto__: null,
+    addFaq: addFaq,
     addParagraph: addParagraph,
     articoloSlice: articoloSlice,
     default: articoloSlice$1,
@@ -725,6 +736,7 @@ var snackbarSlice$2 = /*#__PURE__*/Object.freeze({
     snackbarSlice: snackbarSlice
 });
 
+exports.addFaq = addFaq;
 exports.addParagraph = addParagraph;
 exports.articlesBlog = articlesBlogSlice$2;
 exports.articlesBlogReducer = articlesBlogSlice$1;

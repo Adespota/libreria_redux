@@ -29,6 +29,7 @@ const initialArticoloState = {
     ],
     faq: [
         {
+            id: nanoid(),
             domanda: "",
             risposta: ""
         }
@@ -224,6 +225,14 @@ const articoloSlice = createSlice({
         },
         deleteAllParagraphs: (state) => {
             state.paragrafi = [];
+        },
+        addFaq: (state) => {
+            const newFaq = {
+                id: nanoid(),
+                domanda: "",
+                risposta: "",
+            };
+            state.faq.push(newFaq);
         },
         addParagraph: (state) => {
             const newParagraph = {
@@ -536,6 +545,7 @@ const {
     updateParolePerParagrafo,
     verificaUnicitaSlug,
     setPunteggioSEO,
+    addFaq,
 } = articoloSlice.actions;
 
 // Seleziona parti dello stato
@@ -555,6 +565,7 @@ var articoloSlice$1 = articoloSlice.reducer;
 
 var articoloSlice$2 = /*#__PURE__*/Object.freeze({
     __proto__: null,
+    addFaq: addFaq,
     addParagraph: addParagraph,
     articoloSlice: articoloSlice,
     default: articoloSlice$1,
@@ -723,5 +734,5 @@ var snackbarSlice$2 = /*#__PURE__*/Object.freeze({
     snackbarSlice: snackbarSlice
 });
 
-export { addParagraph, articlesBlogSlice$2 as articlesBlog, articlesBlogSlice$1 as articlesBlogReducer, articoloSlice$2 as articolo, articoloSlice$1 as articoloReducer, deleteAllParagraphs, deleteParagraph, hideSnackbar, resetAll, resetFileName, resetImage, resetImageInParagraph, resetImagePreview, resetImagePreviewParagraph, resetNewCategory, resetNewDescription, resetSelectedCategory, setArticleDate, setArticles, setArticlesByCategory, setCategory, setCategoryPageBlog, setContaParole, setContaParoleTotale, setDocumentId, setFileName, setFileNameImageParagraph, setImagePreview, setImagePreviewParagraph, setInput, setInputPath, setLoading, setPunteggioSEO, setSelectedCategory, setSelectedNewCategory, showSnackbar, snackbarSlice$2 as snackbar, snackbarSlice$1 as snackbarReducer, triggerSendToRedux, updateContentParagraph, updateFaqFromGemini, updateIndice, updateIndiceFromGemini, updateLinkRiferimento, updateMetaDescriptionFromGemini, updateParolaChiaveFromGemini, updateParolePerParagrafo, updatePuntiChiaveFromGemini, updateSintesiFromGemini, updateSlugFromGemini, updateSubtitleFromGemini, updateTitleFromGemini, updateTitleParagraph, updateTitoloSeoFromGemini, validaTutto, verificaUnicitaSlug };
+export { addFaq, addParagraph, articlesBlogSlice$2 as articlesBlog, articlesBlogSlice$1 as articlesBlogReducer, articoloSlice$2 as articolo, articoloSlice$1 as articoloReducer, deleteAllParagraphs, deleteParagraph, hideSnackbar, resetAll, resetFileName, resetImage, resetImageInParagraph, resetImagePreview, resetImagePreviewParagraph, resetNewCategory, resetNewDescription, resetSelectedCategory, setArticleDate, setArticles, setArticlesByCategory, setCategory, setCategoryPageBlog, setContaParole, setContaParoleTotale, setDocumentId, setFileName, setFileNameImageParagraph, setImagePreview, setImagePreviewParagraph, setInput, setInputPath, setLoading, setPunteggioSEO, setSelectedCategory, setSelectedNewCategory, showSnackbar, snackbarSlice$2 as snackbar, snackbarSlice$1 as snackbarReducer, triggerSendToRedux, updateContentParagraph, updateFaqFromGemini, updateIndice, updateIndiceFromGemini, updateLinkRiferimento, updateMetaDescriptionFromGemini, updateParolaChiaveFromGemini, updateParolePerParagrafo, updatePuntiChiaveFromGemini, updateSintesiFromGemini, updateSlugFromGemini, updateSubtitleFromGemini, updateTitleFromGemini, updateTitleParagraph, updateTitoloSeoFromGemini, validaTutto, verificaUnicitaSlug };
 //# sourceMappingURL=index.esm.js.map
