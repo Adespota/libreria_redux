@@ -244,6 +244,15 @@ export const articoloSlice = createSlice({
             };
             state.faq.push(newFaq);
         },
+        removeFaq: (state, action) => {
+            const index = action.payload;
+
+            // Se l'indice è valido, rimuovi la FAQ corrispondente
+            if (index >= 0 && index < state.faq.length) {
+                state.faq.splice(index, 1);
+            }
+        },
+
         addParagraph: (state) => {
             const newParagraph = {
                 id: nanoid(),
@@ -556,6 +565,7 @@ export const {
     verificaUnicitaSlug,
     setPunteggioSEO,
     addFaq,
+    removeFaq,
 } = articoloSlice.actions;
 
 // Seleziona parti dello stato

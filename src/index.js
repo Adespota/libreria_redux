@@ -82,6 +82,7 @@ import {
     verificaUnicitaSlug,
     setPunteggioSEO,
     addFaq,
+    removeFaq,
 } from './store/articoloSlice.js';
 
 export {
@@ -130,6 +131,7 @@ export {
     verificaUnicitaSlug,
     setPunteggioSEO,
     addFaq,
+    removeFaq,
 };
 
 

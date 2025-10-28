@@ -236,6 +236,15 @@ const articoloSlice = toolkit.createSlice({
             };
             state.faq.push(newFaq);
         },
+        removeFaq: (state, action) => {
+            const index = action.payload;
+
+            // Se l'indice è valido, rimuovi la FAQ corrispondente
+            if (index >= 0 && index < state.faq.length) {
+                state.faq.splice(index, 1);
+            }
+        },
+
         addParagraph: (state) => {
             const newParagraph = {
                 id: toolkit.nanoid(),
@@ -548,6 +557,7 @@ const {
     verificaUnicitaSlug,
     setPunteggioSEO,
     addFaq,
+    removeFaq,
 } = articoloSlice.actions;
 
 // Seleziona parti dello stato
@@ -574,6 +584,7 @@ var articoloSlice$2 = /*#__PURE__*/Object.freeze({
     deleteAllParagraphs: deleteAllParagraphs,
     deleteParagraph: deleteParagraph,
     initialArticoloState: initialArticoloState,
+    removeFaq: removeFaq,
     resetAll: resetAll,
     resetFileName: resetFileName,
     resetImage: resetImage,
@@ -745,6 +756,7 @@ exports.articoloReducer = articoloSlice$1;
 exports.deleteAllParagraphs = deleteAllParagraphs;
 exports.deleteParagraph = deleteParagraph;
 exports.hideSnackbar = hideSnackbar;
+exports.removeFaq = removeFaq;
 exports.resetAll = resetAll;
 exports.resetFileName = resetFileName;
 exports.resetImage = resetImage;
