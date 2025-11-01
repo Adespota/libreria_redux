@@ -47,7 +47,7 @@ const initialArticoloState = {
     normalizedSlug: "",
     article: null,
     loading: false,
-    category: [],
+    category: [], // Tutte le categorie
     resetKey: 0,
     punteggioSEO: "",
     numeroParolePerParagrafo: {},
@@ -633,47 +633,34 @@ var articoloSlice$2 = /*#__PURE__*/Object.freeze({
 const articlesBlogSlice = createSlice({
     name: 'articles',
     initialState: {
-        //articles: [],
         articlesByCategory: [],
         selectedCategory: null,
         category: [], // Ci sono tutte le categorie
-
     },
     reducers: {
-        // Sovrascrive completamente l'array di articoli
-        setArticles(state, action) {
-            state.articles = action.payload;
+        // Popola la pagina Blog con tutte le categorie
+        setCategoryPageBlog(state, action) {
+            state.category = action.payload;
         },
         setArticlesByCategory(state, action) {
             state.articlesByCategory = action.payload;
         },
-        //setSelectedCategory(state, action) {
-            //state.selectedCategory = action.payload;
-        //},
+        selectedCategoria(state, action) {
+            state.selectedCategory = action.payload;
+        },
         // Resetta la categoria selezionata
         resetSelectedCategory(state) {
             state.selectedCategory = null;
-        },
-        // Popola la pagina Blog con tutte le categorie
-        setCategoryPageBlog(state, action) {
-            state.category = action.payload;
         },
     },
 });
 
 const {
-    setArticles,
-    //setSelectedCategory,
-    setArticlesByCategory,
     setCategoryPageBlog,
+    setArticlesByCategory,
+    selectedCategoria,
     resetSelectedCategory,
 } = articlesBlogSlice.actions;
-
-const selectArticles = (state) => state.articles.articles;
-const selectArticlesByCategory = (state) => state.articles.articlesByCategory;
-//export const selectSelectedCategory = (state) => state.articles.selectedCategory;
-const selectCategoryPageBlog = (state) => state.articles.category;
-
 
 
 var articlesBlogSlice$1 = articlesBlogSlice.reducer;
@@ -683,10 +670,7 @@ var articlesBlogSlice$2 = /*#__PURE__*/Object.freeze({
     articlesBlogSlice: articlesBlogSlice,
     default: articlesBlogSlice$1,
     resetSelectedCategory: resetSelectedCategory,
-    selectArticles: selectArticles,
-    selectArticlesByCategory: selectArticlesByCategory,
-    selectCategoryPageBlog: selectCategoryPageBlog,
-    setArticles: setArticles,
+    selectedCategoria: selectedCategoria,
     setArticlesByCategory: setArticlesByCategory,
     setCategoryPageBlog: setCategoryPageBlog
 });
@@ -733,5 +717,5 @@ var snackbarSlice$2 = /*#__PURE__*/Object.freeze({
     snackbarSlice: snackbarSlice
 });
 
-export { addFaq, addParagraph, articlesBlogSlice$2 as articlesBlog, articlesBlogSlice$1 as articlesBlogReducer, articoloSlice$2 as articolo, articoloSlice$1 as articoloReducer, deleteAllParagraphs, deleteParagraph, hideSnackbar, removeFaq, resetAll, resetFileName, resetImage, resetImageInParagraph, resetImagePreview, resetImagePreviewParagraph, resetNewCategory, resetNewDescription, resetSelectedCategory, setArticleDate, setArticles, setArticlesByCategory, setCategory, setCategoryPageBlog, setContaParole, setContaParoleTotale, setDocumentId, setFileName, setFileNameImageParagraph, setImagePreview, setImagePreviewParagraph, setInput, setInputPath, setLoading, setPunteggioSEO, setSelectedCategory, setSelectedNewCategory, showSnackbar, snackbarSlice$2 as snackbar, snackbarSlice$1 as snackbarReducer, triggerSendToRedux, updateContentParagraph, updateFaqFromGemini, updateIndice, updateIndiceFromGemini, updateLinkRiferimento, updateMetaDescriptionFromGemini, updateParolaChiaveFromGemini, updateParolePerParagrafo, updatePuntiChiaveFromGemini, updateSintesiFromGemini, updateSlugFromGemini, updateSubtitleFromGemini, updateTitleFromGemini, updateTitleParagraph, updateTitoloSeoFromGemini, validaTutto, verificaUnicitaSlug };
+export { addFaq, addParagraph, articlesBlogSlice$2 as articlesBlog, articlesBlogSlice$1 as articlesBlogReducer, articoloSlice$2 as articolo, articoloSlice$1 as articoloReducer, deleteAllParagraphs, deleteParagraph, hideSnackbar, removeFaq, resetAll, resetFileName, resetImage, resetImageInParagraph, resetImagePreview, resetImagePreviewParagraph, resetNewCategory, resetNewDescription, resetSelectedCategory, selectedCategoria, setArticleDate, setArticlesByCategory, setCategory, setCategoryPageBlog, setContaParole, setContaParoleTotale, setDocumentId, setFileName, setFileNameImageParagraph, setImagePreview, setImagePreviewParagraph, setInput, setInputPath, setLoading, setPunteggioSEO, setSelectedCategory, setSelectedNewCategory, showSnackbar, snackbarSlice$2 as snackbar, snackbarSlice$1 as snackbarReducer, triggerSendToRedux, updateContentParagraph, updateFaqFromGemini, updateIndice, updateIndiceFromGemini, updateLinkRiferimento, updateMetaDescriptionFromGemini, updateParolaChiaveFromGemini, updateParolePerParagrafo, updatePuntiChiaveFromGemini, updateSintesiFromGemini, updateSlugFromGemini, updateSubtitleFromGemini, updateTitleFromGemini, updateTitleParagraph, updateTitoloSeoFromGemini, validaTutto, verificaUnicitaSlug };
 //# sourceMappingURL=index.esm.js.map

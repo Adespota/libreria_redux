@@ -49,7 +49,7 @@ const initialArticoloState = {
     normalizedSlug: "",
     article: null,
     loading: false,
-    category: [],
+    category: [], // Tutte le categorie
     resetKey: 0,
     punteggioSEO: "",
     numeroParolePerParagrafo: {},
@@ -635,47 +635,34 @@ var articoloSlice$2 = /*#__PURE__*/Object.freeze({
 const articlesBlogSlice = toolkit.createSlice({
     name: 'articles',
     initialState: {
-        //articles: [],
         articlesByCategory: [],
         selectedCategory: null,
         category: [], // Ci sono tutte le categorie
-
     },
     reducers: {
-        // Sovrascrive completamente l'array di articoli
-        setArticles(state, action) {
-            state.articles = action.payload;
+        // Popola la pagina Blog con tutte le categorie
+        setCategoryPageBlog(state, action) {
+            state.category = action.payload;
         },
         setArticlesByCategory(state, action) {
             state.articlesByCategory = action.payload;
         },
-        //setSelectedCategory(state, action) {
-            //state.selectedCategory = action.payload;
-        //},
+        selectedCategoria(state, action) {
+            state.selectedCategory = action.payload;
+        },
         // Resetta la categoria selezionata
         resetSelectedCategory(state) {
             state.selectedCategory = null;
-        },
-        // Popola la pagina Blog con tutte le categorie
-        setCategoryPageBlog(state, action) {
-            state.category = action.payload;
         },
     },
 });
 
 const {
-    setArticles,
-    //setSelectedCategory,
-    setArticlesByCategory,
     setCategoryPageBlog,
+    setArticlesByCategory,
+    selectedCategoria,
     resetSelectedCategory,
 } = articlesBlogSlice.actions;
-
-const selectArticles = (state) => state.articles.articles;
-const selectArticlesByCategory = (state) => state.articles.articlesByCategory;
-//export const selectSelectedCategory = (state) => state.articles.selectedCategory;
-const selectCategoryPageBlog = (state) => state.articles.category;
-
 
 
 var articlesBlogSlice$1 = articlesBlogSlice.reducer;
@@ -685,10 +672,7 @@ var articlesBlogSlice$2 = /*#__PURE__*/Object.freeze({
     articlesBlogSlice: articlesBlogSlice,
     default: articlesBlogSlice$1,
     resetSelectedCategory: resetSelectedCategory,
-    selectArticles: selectArticles,
-    selectArticlesByCategory: selectArticlesByCategory,
-    selectCategoryPageBlog: selectCategoryPageBlog,
-    setArticles: setArticles,
+    selectedCategoria: selectedCategoria,
     setArticlesByCategory: setArticlesByCategory,
     setCategoryPageBlog: setCategoryPageBlog
 });
@@ -754,8 +738,8 @@ exports.resetImagePreviewParagraph = resetImagePreviewParagraph;
 exports.resetNewCategory = resetNewCategory;
 exports.resetNewDescription = resetNewDescription;
 exports.resetSelectedCategory = resetSelectedCategory;
+exports.selectedCategoria = selectedCategoria;
 exports.setArticleDate = setArticleDate;
-exports.setArticles = setArticles;
 exports.setArticlesByCategory = setArticlesByCategory;
 exports.setCategory = setCategory;
 exports.setCategoryPageBlog = setCategoryPageBlog;

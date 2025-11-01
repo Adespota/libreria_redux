@@ -47,7 +47,7 @@ const initialArticoloState = {
     normalizedSlug: "",
     article: null,
     loading: false,
-    category: [],
+    category: [], // Tutte le categorie
     resetKey: 0,
     punteggioSEO: "",
     numeroParolePerParagrafo: {},

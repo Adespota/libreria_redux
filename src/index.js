@@ -10,23 +10,21 @@ export * as articlesBlog from './store/articlesBlogSlice.js';
 export * as snackbar     from './store/snackbarSlice.js';
 
 
+
+
 // Esporto tutte le azioni di articlesBlogSlice
 import {
-    setArticles,
-    //setSelectedCategory,
+    selectedCategoria,
     setArticlesByCategory,
     setCategoryPageBlog,
     resetSelectedCategory,
-    //setLoading
 } from './store/articlesBlogSlice.js';
 
 export {
-    setArticles,
-    //setSelectedCategory,
+    selectedCategoria,
     setArticlesByCategory,
     setCategoryPageBlog,
     resetSelectedCategory,
-    //setLoading
 };
 
 
