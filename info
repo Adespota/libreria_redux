@@ -1,0 +1,9 @@
+
+Codice per pushare e aggiornare la versione della libreria_redux
+
+npm run build
+git add -f dist package.json src rollup.config.js
+git commit -m "build"
+npm version patch -m "build: %s"
+git push --follow-tags
+
