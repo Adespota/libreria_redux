@@ -54,7 +54,6 @@ const initialArticoloState = {
     punteggioSEO: "",
     numeroParolePerParagrafo: {},
     numeroParoleTotali: 0,
-    shouldSendToRedux: false,
     validazione: {
         linkInterniValido: false,
         linkEsterniValido: false,
@@ -497,13 +496,6 @@ const articoloSlice = toolkit.createSlice({
 
         // Validazione completa
         validaTutto: (state) => {
-            articoloSlice.caseReducers.validaParolaChiave(state);
-            articoloSlice.caseReducers.validaTitoloSeo(state);
-            articoloSlice.caseReducers.validaMetaDescription(state);
-            articoloSlice.caseReducers.validaSlug(state);
-            articoloSlice.caseReducers.validaTitolo(state);
-            articoloSlice.caseReducers.validaSottotitolo(state);
-            articoloSlice.caseReducers.validaTitoliParagrafi(state);
             articoloSlice.caseReducers.validaLinkInterni(state);
             articoloSlice.caseReducers.validaLinkEsterni(state);
         },
@@ -643,11 +635,11 @@ var articoloSlice$2 = /*#__PURE__*/Object.freeze({
 const articlesBlogSlice = toolkit.createSlice({
     name: 'articles',
     initialState: {
-        articles: [],
+        //articles: [],
         articlesByCategory: [],
         selectedCategory: null,
         category: [], // Ci sono tutte le categorie
-        loading: false,
+
     },
     reducers: {
         // Sovrascrive completamente l'array di articoli
@@ -657,9 +649,6 @@ const articlesBlogSlice = toolkit.createSlice({
         setArticlesByCategory(state, action) {
             state.articlesByCategory = action.payload;
         },
-        //setLoading(state, action) {
-           //state.loading = action.payload;
-        //},
         //setSelectedCategory(state, action) {
             //state.selectedCategory = action.payload;
         //},
@@ -680,14 +669,13 @@ const {
     setArticlesByCategory,
     setCategoryPageBlog,
     resetSelectedCategory,
-    //setLoading,
 } = articlesBlogSlice.actions;
 
 const selectArticles = (state) => state.articles.articles;
 const selectArticlesByCategory = (state) => state.articles.articlesByCategory;
 //export const selectSelectedCategory = (state) => state.articles.selectedCategory;
 const selectCategoryPageBlog = (state) => state.articles.category;
-//export const selectLoading = (state) => state.articles.loading;
+
 
 
 var articlesBlogSlice$1 = articlesBlogSlice.reducer;

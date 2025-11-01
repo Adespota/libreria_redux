@@ -5,11 +5,11 @@ import { createSlice } from '@reduxjs/toolkit';
 export const articlesBlogSlice = createSlice({
     name: 'articles',
     initialState: {
-        articles: [],
+        //articles: [],
         articlesByCategory: [],
         selectedCategory: null,
         category: [], // Ci sono tutte le categorie
-        loading: false,
+
     },
     reducers: {
         // Sovrascrive completamente l'array di articoli
@@ -19,9 +19,6 @@ export const articlesBlogSlice = createSlice({
         setArticlesByCategory(state, action) {
             state.articlesByCategory = action.payload;
         },
-        //setLoading(state, action) {
-           //state.loading = action.payload;
-        //},
         //setSelectedCategory(state, action) {
             //state.selectedCategory = action.payload;
         //},
@@ -42,14 +39,13 @@ export const {
     setArticlesByCategory,
     setCategoryPageBlog,
     resetSelectedCategory,
-    //setLoading,
 } = articlesBlogSlice.actions;
 
 export const selectArticles = (state) => state.articles.articles;
 export const selectArticlesByCategory = (state) => state.articles.articlesByCategory;
 //export const selectSelectedCategory = (state) => state.articles.selectedCategory;
 export const selectCategoryPageBlog = (state) => state.articles.category;
-//export const selectLoading = (state) => state.articles.loading;
+
 
 
 export default articlesBlogSlice.reducer;

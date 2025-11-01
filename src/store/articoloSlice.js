@@ -52,7 +52,6 @@ const initialArticoloState = {
     punteggioSEO: "",
     numeroParolePerParagrafo: {},
     numeroParoleTotali: 0,
-    shouldSendToRedux: false,
     validazione: {
         linkInterniValido: false,
         linkEsterniValido: false,
@@ -505,13 +504,6 @@ export const articoloSlice = createSlice({
 
         // Validazione completa
         validaTutto: (state) => {
-            articoloSlice.caseReducers.validaParolaChiave(state);
-            articoloSlice.caseReducers.validaTitoloSeo(state);
-            articoloSlice.caseReducers.validaMetaDescription(state);
-            articoloSlice.caseReducers.validaSlug(state);
-            articoloSlice.caseReducers.validaTitolo(state);
-            articoloSlice.caseReducers.validaSottotitolo(state);
-            articoloSlice.caseReducers.validaTitoliParagrafi(state);
             articoloSlice.caseReducers.validaLinkInterni(state);
             articoloSlice.caseReducers.validaLinkEsterni(state);
         },
